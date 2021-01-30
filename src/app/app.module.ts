@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { MaterialWidgetModule } from 'ngx-material-widget'; 
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     MaterialWidgetModule
   ],
   providers: [],
