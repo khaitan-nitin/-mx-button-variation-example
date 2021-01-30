@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { Button, HoverButton, ButtonGroup } from 'ngx-material-widget';
 import { FormGroup } from '@angular/forms';
-import { buttonTypes } from '../config/button-types.config';
-import { buttonTypesWithIcon } from '../config/button-types-with-icon.config';
-import { buttonTypesOnlyIcon } from '../config/button-types-only-icon.config';
-import { buttonTypesWithIconRight } from '../config/button-types-with-icon-right.config';
-import { buttonTypesWithIconTop } from '../config/button-types-with-icon-top.config';
-import { buttonTypesWithIconBottom } from '../config/button-types-with-icon-bottom.config';
-import { buttonTypesWithBadge } from '../config/button-types-with-badge.config';
-import { buttonTypesSmallSize } from '../config/button-types-small-size.config';
-import { buttonTypesTinySize } from '../config/button-types-tiny-size.config';
-import { buttonTypesMicroSize } from '../config/button-types-micro-size.config';
-import { buttonGroupWidth } from '../config/button-group-width.config';
-import { buttonChipFullWidth } from '../config/button-chip-full-width.config';
-import { buttonGroupFullWidth } from '../config/button-group-full-width.config';
+import { buttonTypesWithIcon } from './config/button-types-with-icon.config';
+import { buttonTypesOnlyIcon } from './config/button-types-only-icon.config';
+import { buttonTypesWithIconRight } from './config/button-types-with-icon-right.config';
+import { buttonTypesWithIconTop } from './config/button-types-with-icon-top.config';
+import { buttonTypesWithIconBottom } from './config/button-types-with-icon-bottom.config';
+import { buttonTypesWithBadge } from './config/button-types-with-badge.config';
+import { buttonTypesSmallSize } from './config/button-types-small-size.config';
+import { buttonTypesTinySize } from './config/button-types-tiny-size.config';
+import { buttonTypesMicroSize } from './config/button-types-micro-size.config';
+import { buttonGroupWidth } from './config/button-group-width.config';
+import { buttonChipFullWidth } from './config/button-chip-full-width.config';
+import { buttonGroupFullWidth } from './config/button-group-full-width.config';
+import { buttonTypes } from './config/button-types.config';
 
 @Component({
   selector: 'app-root',
