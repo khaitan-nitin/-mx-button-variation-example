@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ButtonComponent } from './app.component';
 
-import { AdminBuilderModule } from 'ngx-material-widget'; 
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminBuilderModule,
     MatIconModule
   ],
   providers: [],
