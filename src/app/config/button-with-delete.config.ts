@@ -1,4 +1,4 @@
-import { Button, ButtonType, ButtonColor, ButtonGroup, HoverButton, BadgeColor, BadgePosition, BadgeSize, ButtonSize } from 'ngx-material-widget/lib/button/model';
+import { Button, ButtonType, ButtonColor, ButtonGroup, HoverButton, ButtonSize } from 'ngx-material-widget';
 
 export const buttonWithDelete: Array<Button | ButtonGroup | HoverButton> = [
     {

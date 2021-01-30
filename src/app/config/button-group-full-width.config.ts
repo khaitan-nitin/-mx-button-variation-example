@@ -1,5 +1,5 @@
-import { Button, ButtonType, ButtonColor, ButtonGroup, HoverButton, BadgeColor, BadgePosition, BadgeSize, ButtonSize } from 'ngx-material-widget/lib/button/model';
-import { FormDiaplyMode } from 'ngx-material-widget/lib/form/model';
+import { Button, ButtonType, ButtonColor, ButtonGroup, HoverButton, ButtonSize } from 'ngx-material-widget';
+import { FormDiaplyMode } from 'ngx-material-widget';
 
 export const buttonGroupFullWidth: Array<Button | ButtonGroup | HoverButton> = [
     {
