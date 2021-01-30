@@ -1,18 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./app.component.scss']
 })
-export class ButtonComponent {
-  name: string;
- 
-  constructor() { }
-
-  ngOnInit(): void {
-   this.name = "Nitin";
-  }
+export class AppComponent {
+  title = 'mx-button-variation-example';
 }
