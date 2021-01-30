@@ -1,6 +1,0 @@
-{
-    "id": 1,
-    "code": "INVALID_ORDER_ID",
-    "message": "Invalid Order Id",
-    "modules": ["Order"]
-}
