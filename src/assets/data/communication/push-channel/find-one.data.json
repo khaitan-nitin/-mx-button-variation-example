@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "key": "order_nofication",
+    "name": "Order Notification",
+    "description": "Order Notification Channel",
+    "active": true
+}

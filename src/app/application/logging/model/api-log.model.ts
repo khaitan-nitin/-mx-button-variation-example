@@ -1,0 +1,22 @@
+export interface ApiLog {
+    id: number,
+    userId?: number,
+    userName?: string,
+    mobile?: string,
+    statusCode?: number,
+    header?: any,
+    request?: any,
+    requestParams?: any,
+    response?: any,
+    source?: string,
+    module?: string,
+    url?: string, 
+    referer?: string,
+    requestMethod?: string,
+    userAgent?: string,
+    threadName?: string,
+    requestId?: string,
+    appVersion?: string,
+    startTime?: Date,
+    endTime?: Date
+}

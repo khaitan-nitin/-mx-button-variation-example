@@ -1,0 +1,17 @@
+{
+    "id": 1,
+    "name": "Active Customers",
+    "description": "Condition to identify active customers",
+    "receiver": {
+        "type": "QUERY_BASED",
+        "contactDetail": [
+            {
+                "query": "query 1"
+            },
+            {
+                "query": "query 2"
+            }
+        ]
+    },
+    "active": true
+}

@@ -1,0 +1,26 @@
+@import "node_modules/@material/layout-grid/mdc-layout-grid";
+
+.cf-example-label {
+    padding: 12px;
+    left: 8px;
+}
+
+.cf-example-button {
+    padding: 12px;
+    left: 8px;
+    width: 100%;
+}
+
+.cf-example-header {
+    width: 100%;
+    background-color: lightgrey;
+    padding: 12px 16px;
+}
+
+.mat-card-header-text {
+    margin: 0px !important;
+}
+
+.mdc-layout-grid {
+    padding: 0px;
+}

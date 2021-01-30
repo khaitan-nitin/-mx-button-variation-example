@@ -1,0 +1,46 @@
+{
+    "id": 1,
+    "code": "WEL_007",
+    "description": "Welcome code active",
+    "promotionCodeTypeId": 1,
+    "accessibility": {
+        "accessibilityCriteriaId": 1, 
+        "ruleId": 1,
+        "recurring": {
+            "frequency": "MONTHLY",
+            "activeOnDays": [
+                {
+                    "recurringFor": "FIRST_FEW",
+                    "days": ["1", "2", "5"]
+                },
+                {
+                    "recurringFor": "LAST_FEW",
+                    "days": ["9", "4", "5"]
+                }
+           ]
+        },
+        "startDate": "2020-02-20 10:23:07.4154497",
+        "endDate": "2020-02-20 10:23:07.4154497"
+    },
+    "usage": {
+        "count": 3
+    },
+    "benefit": { 
+        "ruleId": 1,
+        "type": "PRODUCT",
+        "percentage": 20,
+        "maxAmount": 100,
+        "products": [
+            {
+                "productId": 100,
+                "quantity": 1
+            },
+            {
+                "productId": 352,
+                "quantity": 3
+            }
+        ],
+        "count": 1
+    },
+    "active": true
+}

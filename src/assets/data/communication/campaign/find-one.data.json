@@ -1,0 +1,22 @@
+{
+    "id": 1,
+    "name": "SMS Campaign",
+    "description": "SMS Campaign to send onboarding guide",
+    "message": {
+        "type": "SMS",
+        "template": 1
+    },
+    "receiver": {
+        "type": "QUERY_BASED",
+        "contactDetail": {
+            "query": "test query"
+        }
+    },
+    "send": {
+        "type": "INSTANT",
+        "sendPattern": "ONE_GO",
+        "batchSize": 100,
+        "nextAfterDelay": 500
+    },
+    "active": true
+}

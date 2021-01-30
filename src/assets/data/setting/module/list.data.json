@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "key": "AUTH",
+        "label": "Authentication Module",
+        "description": "Authentication Module to be used generically by all the application",
+        "active": true
+    },
+    {
+        "id": 2,
+        "key": "USER",
+        "label": "User Module",
+        "description": "User Module to be used to manager user activity like login, registration etc",
+        "active": true
+    },
+    {
+        "id": 3,
+        "key": "LOG",
+        "label": "Log Module",
+        "description": "Log Module is use to track different types of logs in the application",
+        "active": true
+    },
+    {
+        "id": 4,
+        "key": "SETTING",
+        "label": "Setting Module",
+        "description": "Setting Module to manage application level setting criteria to be used accross application",
+        "active": true
+    },
+    {
+        "id": 5,
+        "key": "COMMUNICATION",
+        "label": "Communication Module",
+        "description": "Communication Module to manage different types of communication accross application",
+        "active": true
+    },
+    {
+        "id": 6,
+        "key": "SEGMENT",
+        "label": "Segment Module",
+        "description": "Segment Module is used to manage different user segment to be used by different flow in the appliation",
+        "active": true
+    },
+    {
+        "id": 7,
+        "key": "MESSAGE",
+        "label": "Message Module",
+        "description": "Message Module keep tack of different types of message and error code as will be used by the application",
+        "active": true
+    }
+]

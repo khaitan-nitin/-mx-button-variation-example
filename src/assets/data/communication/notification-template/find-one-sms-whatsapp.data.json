@@ -1,0 +1,20 @@
+{
+    "id": 2,
+    "key": "USER_REGISTRATION",
+    "name": "User Registration",
+    "description": "Communication on user registration event",
+    "type": "TRANSACTIONAL",
+    "target": [
+        "SMS",
+        "WHATSAPP"
+    ],
+    "senderId": "1",
+    "messages": {
+        "en": {
+            "body": "You OTP is ${otp}"
+        },
+        "hindi": {
+            "body": "You logged in at ${time} Hindi"
+        }
+    }
+}

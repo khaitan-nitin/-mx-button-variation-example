@@ -1,0 +1,18 @@
+{
+    "id": 1,
+    "key": "USER_LOGIN",
+    "name": "User Login",
+    "description": "Communication on user login event",
+    "type": "PROMOTIONAL",
+    "target": ["EMAIL"],
+    "messages": {
+        "en": {
+            "subject": "You logged in at ${time}",
+            "body": "You logged in at ${time}"
+        },
+        "hindi": {
+            "subject": "You logged in at ${time} Hindi",
+            "body": "You logged in at ${time} Hindi"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "id": 1,
+    "name": "Regular Buyers",
+    "description": "Customer who order regularly",
+    "active": true
+}

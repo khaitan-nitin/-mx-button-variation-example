@@ -1,0 +1,60 @@
+<cf-crud-list  
+    *ngIf="configListData && configListData.records"
+    [identifier]="identifier" 
+    [header]="header" 
+    [actions]="actions" 
+    [actionPages]="actionPages"
+
+    [listReset]="listReset"
+    [quickLinks]="quickLinks" 
+    [searchConfig]="searchConfig" 
+    [listConfig]="listConfig"  
+    [keyMap] = "keyMap"
+    [configData]="configListData"  
+
+    (onButtonClick)="buttonClick($event)"
+    (onFieldChange)="fieldChange($event)"
+    (onFormClick)="formChange($event)"
+    (onSortClick)="onSort($event)"
+    (onPageClick)="onPage($event)"
+></cf-crud-list>
+
+<!-- {{configFormData | json}} -->
+<div class="mdc-layout-grid cf-collection">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--span-{{isMobile ? 4 : (isTablet ? 3 : 4)}} cf-collection-form" [style.height.px]="height">
+            <cf-crud-form
+                *ngIf="configFormData && configFormData.record"
+                [identifier]="identifier" 
+                [header]="header" 
+                [actions]="actions" 
+                [actionPages]="actionPages"
+
+                [reset]="reset"  
+                [form]="form"  
+                [keyMap] = "keyMap" 
+                [configData]="configFormData"  
+
+                (onButtonClick)="buttonClick($event)"
+                (onFieldChange)="fieldChange($event)"
+                (onFormClick)="formChange($event)"    
+            ></cf-crud-form>
+        </div>
+        <div class="mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--span-{{isMobile ? 4 : (isTablet ? 5 : 8)}} cf-collection-preview">
+            <span *ngIf="configFormData && configFormData.record && configFormData.record.collectionDisplayDetail && configFormData.record.collectionDisplayDetail.cells">
+                <mat-grid-list 
+                    cols="4" 
+                    [rowHeight]="configFormData.record.collectionDisplayDetail.rowHeight">
+                    <mat-grid-tile
+                        *ngFor="let cell of configFormData.record.collectionDisplayDetail.cells"
+                        [colspan]="cell.cols"
+                        [rowspan]="cell.rows"
+                        [style.background]="cell.bgColor">
+                        {{cell.rows}}--{{cell.cols}}
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </span>
+        </div>
+    </div>
+</div>
+

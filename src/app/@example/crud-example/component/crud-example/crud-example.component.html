@@ -1,0 +1,35 @@
+<cf-crud-list  
+    [identifier]="identifier" 
+    [header]="header" 
+    [actions]="actions" 
+    [actionPages]="actionPages"
+
+    [listReset]="reset"
+    [quickLinks]="quickLinks" 
+    [searchConfig]="searchConfig" 
+    [listConfig]="listConfig" 
+    [keyMap] = "keyMap"
+    [configData]="configListData"  
+
+    (onButtonClick)="buttonClick($event)"
+    (onFieldChange)="fieldChange($event)"
+    (onFormClick)="formChange($event)"
+    (onSortClick)="onSort($event)"
+    (onPageClick)="onPage($event)"
+></cf-crud-list>
+
+<cf-crud-form
+    [identifier]="identifier" 
+    [header]="header" 
+    [actions]="actions" 
+    [actionPages]="actionPages"
+
+    [reset]="reset"  
+    [form]="form"  
+    [keyMap] = "keyMap" 
+    [configData]="configFormData"  
+
+    (onButtonClick)="buttonClick($event)"
+    (onFieldChange)="fieldChange($event)"
+    (onFormClick)="formChange($event)"    
+></cf-crud-form>

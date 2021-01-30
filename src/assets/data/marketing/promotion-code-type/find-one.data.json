@@ -1,0 +1,6 @@
+{
+    "id": 1,
+    "name": "Welcome Code",
+    "description": "Welcome code can be used by the new users after register themself on the application",
+    "active": true
+}

@@ -1,0 +1,85 @@
+{
+    "id": 1,
+    "sender": {
+        "userId": 1,
+        "userName": "Nitin",
+        "token": "lkbjksfljaslfdakszsdfasflksfkdo2ue091acasd29034sdaf"
+    },
+    "receiver": [
+        {
+            "userId": 1,
+            "responses": [
+                {
+                    "token": "afakjasfljaslfdaksfdljslfjlasflksfkdo2ue091acasdonc2019casdoc",
+                    "os": "ANDROID",
+                    "response": {
+                        "canonical_ids": 0,
+                        "success": 0,
+                        "failure": 1,
+                        "results": [
+                            {
+                                "message_id": "0:1588445520235304%975a40bc975a40bc"
+                            }
+                        ],
+                        "multicast_id": 1676319707445058175
+                    },
+                    "statusCode": 400,
+                    "readStatus": false,
+                    "status": true,
+                    "errorCode": "MSG-400",
+                    "errorMessage": "Message sent Failed"
+                }
+            ]
+        }
+    ],
+    "template": {
+        "key": "USER_LOGIN",
+        "type": "PROMOTIONAL",
+        "template": {
+            "en": {
+                "subject": "You logged in at ${time}",
+                "body": "You logged in at ${time}"
+            }
+        }
+    },
+    "message": {
+        "language": "en",
+        "text": "You logged in at 20-02-2020",
+        "context": {
+            "time": "20-02-2020"
+        },
+        "request": {
+            "notification": {
+                "visibility": "PUBLIC",
+                "vibrate_timings": [
+                    0,
+                    400,
+                    200,
+                    400
+                ],
+                "sound": "sound.mp3",
+                "title": "Order Sent!",
+                "body": "Order has been sent successfully.",
+                "notification_priority": "PRIORITY_HIGH",
+                "android_channel_id": "orders"
+            },
+            "data": {
+                "orderId": 5634,
+                "customerId": 257,
+                "orderStatus": "REJECTED",
+                "vendorId": 253,
+                "id": 17396,
+                "type": "Rejected",
+                "click_action": "FLUTTER_NOTIFICATION_CLICK"
+            },
+            "android": {
+                "priority": "high"
+            }
+        },
+        "link": {
+            "basePath": "API_BASE_PATH",
+            "uri": "/test"
+        }
+    },
+    "sentAt": "2020-02-20 10:23:07.5154523"
+}

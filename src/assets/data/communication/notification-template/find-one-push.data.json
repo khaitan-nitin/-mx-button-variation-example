@@ -1,0 +1,30 @@
+{
+    "id": 4,
+    "key": "USER_LOGIN",
+    "name": "User Login",
+    "description": "Communication on user login event",
+    "type": "PROMOTIONAL",
+    "target": [
+        "PUSH"
+    ],
+    "messages": {
+        "en": {
+            "title": "You logged in at ${time}",
+            "body": "You logged in at ${time}",
+            "channelKey": "order_nofication",
+            "ringtone": "/push/rington.mp3",
+            "vibration": true,
+            "screenGlow": true,
+            "icon": "/push/icon.png"
+        },
+        "hindi": {
+            "title": "You logged in at ${time} Hindi",
+            "body": "You logged in at ${time} Hindi",
+            "channelKey": "order_nofication",
+            "ringtone": "/push/rington2.mp3",
+            "vibration": true,
+            "screenGlow": false,
+            "icon": "/push/icon2.png"
+        }
+    }
+}

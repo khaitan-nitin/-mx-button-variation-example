@@ -1,0 +1,106 @@
+<cf-crud-list  
+    *ngIf="configListData && configListData.records"
+    [identifier]="identifier" 
+    [header]="header" 
+    [actions]="actions" 
+    [actionPages]="actionPages"
+
+    [listReset]="listReset"
+    [quickLinks]="quickLinks" 
+    [searchConfig]="searchConfig" 
+    [listConfig]="listConfig" 
+    [keyMap] = "keyMap"
+    [configData]="configListData"  
+
+    (onButtonClick)="buttonClick($event)"
+    (onFieldChange)="fieldChange($event)"
+    (onFormClick)="formChange($event)"
+    (onSortClick)="onSort($event)"
+    (onPageClick)="onPage($event)"
+></cf-crud-list>
+
+<!-- {{configFormData | json}} -->
+<cf-crud-form
+    *ngIf="configFormData && configFormData.record"
+    [identifier]="identifier" 
+    [header]="header" 
+    [actions]="actions" 
+    [actionPages]="actionPages"
+
+    [reset]="reset"  
+    [form]="form"  
+    [keyMap] = "keyMap" 
+    [configData]="configFormData"  
+
+    (onButtonClick)="buttonClick($event)"
+    (onFieldChange)="fieldChange($event)"
+    (onFormClick)="formChange($event)"    
+></cf-crud-form>
+
+<span *ngIf="configFormData && configFormData.record && configFormData.record.ruleForm">
+    <mat-card class="cf-condition-list" >
+        <mat-card-header>
+          <mat-card-title>{{ruleCondtionList.header.title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <!-- <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <div class="mdc-layout-grid__cell--span-12"> -->
+                        <span *ngFor="let query of configFormData.record.ruleForm.queries; let sourceIndex=index;">
+                            <ng-container *ngTemplateOutlet="cfRuleQuery; context: {query: query, sourceIndex: sourceIndex, myDepth: sourceIndex}"></ng-container>
+                        </span>
+                    <!-- </div>
+                </div>
+            </div> -->
+        </mat-card-content>
+    </mat-card>
+</span> 
+
+<ng-template #cfRuleQuery let-query="query" let-sourceIndex="sourceIndex" let-myDepth="myDepth">
+    <div class="mdc-layout-grid cf-table-rule">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-2" *ngIf="sourceIndex > 0">
+                <cf-field 
+                    [sourceIdentifier]="sourceIdentifier"
+                    [sourceIndex]="sourceIndex"
+                    [sourceType]="'FORM'"
+                    [form]="initCommonFormGroup(sourceIdentifier, myDepth, query.join)" 
+                    [fieldControl]="initCommonFormControl(sourceIdentifier, myDepth)"
+                    [field]="queryJoinField"
+                    [hideLabel]="true"
+                    [displayMode]="'EDIT'" 
+                    [value]="query.join"
+                    [style.width.%]="100">
+                </cf-field>   
+                <!-- {{sourceIdentifier}}--{{sourceIndex}}=={{myDepth}} -->
+                <!-- {{ query.join }} -->
+            </div>
+            <div class="mdc-layout-grid__cell--span-12">
+                <cf-static-list
+                    *ngIf="ruleCondtionList.listType == 'STATIC'"
+                    [listConfig]="ruleCondtionList"
+                    [sourceIdentifier]="sourceIdentifier"
+                    [sourceIndex]="sourceIndex"
+                    [record]="{total: query.subQueries ? query.subQueries.length : 0, pageNo: 1, rows: query.subQueries ? query.subQueries : []}"
+                    [keyMap]="keyMap"
+                    (onFormChange)="formChange($event)"
+                    (onFieldChange)="fieldChange($event)"
+                    (onButtonClick)="buttonClick($event)"
+                ></cf-static-list>  
+            
+                <!-- [originalData]="configData.originalData"  
+                [listReset]="listReset"
+                [expanded]="_expanded"
+                [expandRowIndex]="expandRowIndex"
+                (onPageChange)="onPage($event)"
+                (onSortChange)="onSort($event)"   -->
+            </div>
+
+            <div class="mdc-layout-grid__cell--span-12 cf-rule-child-list" *ngIf="query.queries">
+                <span *ngFor="let innerQuery of query.queries; let sourceIndex=index;">
+                    <ng-container *ngTemplateOutlet="cfRuleQuery; context: {query: innerQuery, sourceIndex: sourceIndex, myDepth: myDepth + '-' + sourceIndex}"></ng-container>
+                </span>
+            </div>
+        </div>
+    </div>
+</ng-template>

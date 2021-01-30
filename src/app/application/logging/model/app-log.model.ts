@@ -1,0 +1,21 @@
+export interface AppLog {
+    id: number,
+    userId?: number,
+    userName?: string,
+    mobile?: string,
+    statusCode?: number,
+    deviceId?: string,
+    exception?: any,
+    trace?: any,
+    request?: any,
+    response?: any,
+    header?: any, 
+    requestParams?: any,
+    requestMethod?: string,
+    url?: string,
+    source?: string,
+    referer?: string,
+    userAgent?: string,
+    appVersion?: string,
+    date?: Date
+}

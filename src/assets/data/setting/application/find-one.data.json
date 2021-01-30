@@ -1,0 +1,17 @@
+{
+    "id": 1,
+    "key": "ADMIN",
+    "label": "Admin Application",
+    "description": "Admin Application to manage application level settings",
+    "image": "", 
+    "active": true,
+    "modules": [
+        "AUTH",
+        "USER",
+        "LOG",
+        "SETTING",
+        "COMMUNICATION",
+        "SEGMENT",
+        "MESSAGE"
+    ]
+}

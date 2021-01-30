@@ -1,0 +1,30 @@
+{
+    "key": "SYSTEM_SETTING",
+    "name": "System Setting",
+    "description": "Application Level System Setting",
+    "image": "",
+    "active": true,
+    "subCategories": [
+        {
+            "key": "BASE_PATH",
+            "name": "Base Path",
+            "description": "Base Path For System Setting",
+            "image": "",
+            "active": true
+        },
+        {
+            "key": "SECURITY",
+            "name": "Security",
+            "description": "Security Setting",
+            "image": "",
+            "active": true
+        },
+        {
+            "key": "PAYMENT",
+            "name": "Payment",
+            "description": "Payment Setting",
+            "image": "",
+            "active": true
+        }
+    ]
+}

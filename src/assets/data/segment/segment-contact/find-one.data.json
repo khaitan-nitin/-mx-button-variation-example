@@ -1,0 +1,11 @@
+{
+    "id": 1,
+    "segmentId": 1,
+    "userName": "Nitin",
+    "userId": "1",
+    "info": {
+        "gender": "M",
+        "doj": "20-20-2019"
+    },
+    "active": true
+}

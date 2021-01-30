@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "key": "AUTH",
+    "label": "Authentication Module",
+    "description": "Authentication Module to be used generically by all the application",
+    "active": true
+}

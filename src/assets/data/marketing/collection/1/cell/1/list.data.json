@@ -1,0 +1,18 @@
+[
+    {
+        "image": "cell_2_banner1_1.jpg",
+        "collectionPageImage": "banner1_page.jpg",
+        "metaData": {
+            "productId": 1
+        },   
+        "criteria": 1
+    },
+    {
+        "image": "cell_2_banner1_2.jpg",
+        "collectionPageImage": "banner1_page.jpg",
+        "metaData": {
+            "search": "entertainment"
+        },   
+        "criteria": 2
+    }
+]  

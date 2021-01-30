@@ -1,0 +1,79 @@
+<mat-toolbar color="primary">
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button *ngIf="isHandset$ | async"
+        (click)="isExpanded = !isExpanded">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span (click)="isExpanded = !isExpanded">Admin Panel</span>
+    <span class="cf-toolbar-spacer"></span>
+    <button class="cf-toolbar-button" mat-button [matMenuTriggerFor]="menu">
+        <mat-icon class="cf-toolbar-button" aria-hidden="false" aria-label="User is logged in">account_circle
+        </mat-icon>
+        <span>Nitin Khaitan</span>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)=profile($event)>
+            <mat-icon aria-hidden="false" aria-label="Profile">account_box</mat-icon>
+            Profile
+        </button>
+        <button mat-menu-item (click)=logout($event)>
+            <mat-icon aria-hidden="false" aria-label="Logout">power_settings_new</mat-icon>
+            Logout
+        </button>
+    </mat-menu>
+</mat-toolbar>
+
+<admin-navigation #side [isExpanded]="isExpanded" (logout)="logout()" [navigationPanel]="navigationdata">
+    <router-outlet></router-outlet>
+</admin-navigation>
+
+<!-- <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [class.cf-table-hidden]="node.permission != null && !(node.permission['subject'] | can: node.permission['action'])">
+                    <a mat-list-item [routerLink]="node.route" class="cf-menu-icon" *ngIf="node.permission == null || (node.permission['subject'] | can: node.permission['action'])">
+                        <mat-icon class="mat-icon-rtl-mirror">{{node.icon}}</mat-icon>
+                        {{node.name}}
+                    </a>
+                </mat-tree-node>
+                <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+                  <button mat-icon-button matTreeNodeToggle  class="cf-toolbar-button" [attr.aria-label]="'toggle ' + node.name"
+                    *ngIf="node.permission == null || (node.permission['subject'] | can: node.permission['action'])"  
+                  >
+                    <mat-icon class="mat-icon-rtl-mirror">
+                      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                    {{node.name}}
+                </button>
+                </mat-tree-node>
+            </mat-tree>
+        </mat-nav-list> 
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>Admin Panel</span>
+            <span class="cf-toolbar-spacer"></span>
+            <button class="cf-toolbar-button" mat-button [matMenuTriggerFor]="menu">
+                <mat-icon class="cf-toolbar-button" aria-hidden="false" aria-label="User is logged in">account_circle</mat-icon>
+                <span>{{user.userName}}</span>
+            </button> 
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)=profile($event)>
+                    <mat-icon aria-hidden="false" aria-label="Profile">account_box</mat-icon>
+                    Profile
+                </button>
+                <button mat-menu-item (click)=logout($event)>
+                    <mat-icon aria-hidden="false" aria-label="Logout">power_settings_new</mat-icon>
+                    Logout
+                </button>
+            </mat-menu>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->

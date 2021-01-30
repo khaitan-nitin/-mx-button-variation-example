@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "userId": 1,
+        "userName": "Nitin",
+        "mobile": "9898989898",
+        "statusCode": "201",
+        "header": {
+            "key1": "val1"
+        },
+        "request": {
+            "userId": 1,
+            "mobile": "9797979797"
+        },
+        "requestParams": "key1=val1&key2=val2",
+        "response": [
+            {
+                "rK1": "rV1",
+                "rK2": "rV2",
+                "rK3": "rV3",
+                "rK4": "rV4"
+            }
+        ],
+        "source": "ADMIN",
+        "module": "USER",
+        "url": "/user/234",
+        "referer": "localhost:2020/admin/index.html",
+        "requestMethod": "GET",
+        "userAgent": "BROWSER",
+        "threadName": "1213123",
+        "requestId": "asfkak23kjsknaksfaj",
+        "appVersion": "2.4.14",
+        "startTime": "20-02-2020 10:23:22",
+        "endTime": "20-02-2020 10:23:22"
+    },
+    {
+        "id": 2,
+        "userId": 2,
+        "userName": "Amit",
+        "mobile": "3747232983",
+        "statusCode": "200",
+        "header": {
+            "key1": "val1"
+        },
+        "request": {
+            "userId": 1,
+            "mobile": "9797979797"
+        },
+        "requestParams": "key1=val1&key2=val2",
+        "response": [
+            {
+                "rK1": "rV1",
+                "rK2": "rV2",
+                "rK3": "rV3",
+                "rK4": "rV4"
+            }
+        ],
+        "source": "ADMIN",
+        "module": "SETTING",
+        "url": "/setting/234",
+        "referer": "localhost:2020/admin/index.html",
+        "requestMethod": "GET",
+        "userAgent": "BROWSER",
+        "threadName": "1213123",
+        "requestId": "asfkak23kjsknaksfaj",
+        "appVersion": "2.4.14",
+        "startTime": "20-02-2020 10:23:22",
+        "endTime": "20-02-2020 10:23:22"
+    }
+]
