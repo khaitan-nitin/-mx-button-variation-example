@@ -1,5 +1,6 @@
-import { Button, ButtonType, ButtonColor, ButtonGroup, HoverButton, ButtonSize } from 'ngx-material-widget';
+import { Button, ButtonColor, ButtonGroup, HoverButton, ButtonSize } from 'ngx-material-widget';
 import { FormDiaplyMode } from 'ngx-material-widget';
+import { ButtonType } from 'ngx-material-widget/lib/button/model/button.model';
 
 export const buttonTypesWithIcon: Array<Button | ButtonGroup | HoverButton> = [
     {
