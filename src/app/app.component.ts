@@ -1,19 +1,14 @@
 import { Component } from '@angular/core';
-import { Button, HoverButton, ButtonGroup } from 'ngx-material-widget';
-import { FormGroup } from '@angular/forms';
-import { buttonTypesWithIcon } from './config/button-types-with-icon.config';
-import { buttonTypesOnlyIcon } from './config/button-types-only-icon.config';
-import { buttonTypesWithIconRight } from './config/button-types-with-icon-right.config';
-import { buttonTypesWithIconTop } from './config/button-types-with-icon-top.config';
-import { buttonTypesWithIconBottom } from './config/button-types-with-icon-bottom.config';
-import { buttonTypesWithBadge } from './config/button-types-with-badge.config';
-import { buttonTypesSmallSize } from './config/button-types-small-size.config';
-import { buttonTypesTinySize } from './config/button-types-tiny-size.config';
-import { buttonTypesMicroSize } from './config/button-types-micro-size.config';
-import { buttonGroupWidth } from './config/button-group-width.config';
-import { buttonChipFullWidth } from './config/button-chip-full-width.config';
-import { buttonGroupFullWidth } from './config/button-group-full-width.config';
-import { buttonTypes } from './config/button-types.config';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material/tree';
+
+import { navigation, navigationPannel } from './layout/config/navigation.config';
+import { Navigation, NavigationFlatNode } from 'ngx-material-widget';
 
 @Component({
   selector: 'app-root',
@@ -21,58 +16,54 @@ import { buttonTypes } from './config/button-types.config';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  buttonTypes: Array<Button | ButtonGroup | HoverButton>;
-  buttonTypesOnlyIcon: Array<Button | ButtonGroup | HoverButton>;
-  buttonTypesWithIcon: Array<Button | ButtonGroup | HoverButton>;
-  buttonTypesWithIconRight: Array<Button | ButtonGroup | HoverButton>;
-  buttonTypesWithIconTop: Array<Button | ButtonGroup | HoverButton>;
-  buttonTypesWithIconBottom: Array<Button | ButtonGroup | HoverButton>;
-
-  buttonTypesWithBadge: Array<Button | ButtonGroup | HoverButton>;
-
-  buttonTypesSmallSize: Array<Button | ButtonGroup | HoverButton>;
-  buttonTypesTinySize: Array<Button | ButtonGroup | HoverButton>;
-  buttonTypesMicroSize: Array<Button | ButtonGroup | HoverButton>;
-
-  buttonGroupWidth: Array<Button | ButtonGroup | HoverButton>;
-  buttonChipFullWidth: Array<Button | ButtonGroup | HoverButton>;
-  buttonGroupFullWidth: Array<Button | ButtonGroup | HoverButton>;
-
-  form: FormGroup;
-  sourceIdentifier: string = "buttonExamples";
-  sourceIndex: number;
-  widgetArrayIndex: number = 1;
-  context: any = {
-    "key1": "value 1",
-    "key2": "value 2.1",
-    "key3": "value 3",
-  };;
-  originalData: any = {
-    "key1": "value 1",
-    "key2": "value 2",
-  };
- 
-  constructor() { }
-
-  ngOnInit(): void {
-   this.buttonTypes = buttonTypes;
-   this.buttonTypesOnlyIcon = buttonTypesOnlyIcon;
-   this.buttonTypesWithIcon = buttonTypesWithIcon;
-   this.buttonTypesWithIconRight = buttonTypesWithIconRight;
-   this.buttonTypesWithIconTop = buttonTypesWithIconTop;
-   this.buttonTypesWithIconBottom = buttonTypesWithIconBottom;
-
-   this.buttonTypesWithBadge = buttonTypesWithBadge;
-   
-   this.buttonTypesSmallSize = buttonTypesSmallSize;
-   this.buttonTypesTinySize = buttonTypesTinySize;
-   this.buttonTypesMicroSize = buttonTypesMicroSize;
-
-   this.buttonGroupWidth = buttonGroupWidth;
-   this.buttonChipFullWidth = buttonChipFullWidth;
-   this.buttonGroupFullWidth = buttonGroupFullWidth;
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    public http: HttpClient, 
+    public router: Router, 
+    public route: ActivatedRoute,
+  ) { 
+    this.dataSource.data = navigation;
   }
 
-  click(event: any): void {
-    console.log(event);
-  }}
+  ngOnInit(): void {
+    this.router.navigate(['/example/component/button/button-type']);
+  }
+
+  isExpanded = true;
+  navigationdata: any = navigationPannel;
+
+  
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  private _transformer = (node: Navigation, level: number) => {
+    return {
+      expandable: !!node.children && node.children.length > 0,
+      route: node.route,
+      icon: node.icon,
+      name: node.name,
+      permission: node.permission,
+      level: level,
+    }; 
+  }
+
+  treeControl = new FlatTreeControl<NavigationFlatNode>(
+    node => node.level, 
+    node => node.expandable
+  );
+
+  treeFlattener = new MatTreeFlattener(
+    this._transformer, node => node.level, node => node.expandable, node => node.children);
+
+  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+
+  hasChild = (_: number, node: NavigationFlatNode) => node.expandable;
+
+  navigate(node: Navigation)  {
+    console.log(node);
+  }
+
+}

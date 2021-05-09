@@ -1,13 +1,16 @@
-<div class="cf-example-button">
-     <cf-button-group 
-          [buttons]="buttonTypes" 
-          [form]="form" 
-          [formDisplayMode]="'EDIT'"
-          [sourceIdentifier]="sourceIdentifier"
-          [sourceIndex]="1" 
-          [widgetArrayIndex]="widgetArrayIndex"
-          [context]="context" 
-          [originalData]="originalData" 
-          (onClick)="click($event)">
-     </cf-button-group>
-</div>
+<admin-navigation #side [isExpanded]="isExpanded" [navigationPanel]="navigationdata">
+    <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button *ngIf="isHandset$ | async"
+            (click)="isExpanded = !isExpanded">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span (click)="isExpanded = !isExpanded">Ngx-Material-Widget Examples</span>
+        <span class="mx-toolbar-spacer"></span>
+        <button class="mx-toolbar-button" mat-button>
+            <mat-icon class="mx-toolbar-button" aria-hidden="false" aria-label="User is logged in">account_circle
+            </mat-icon>
+            <span>Nitin Khaitan</span>
+        </button>
+    </mat-toolbar> 
+    <router-outlet></router-outlet>
+ </admin-navigation>
